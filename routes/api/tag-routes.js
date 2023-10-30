@@ -28,40 +28,40 @@ router.get('/:id', async (req, res) => {
 
 // POST: Create a new tag
 router.post('/', async (req, res) => {
-  try {
-    const tag = await Tag.create(req.body);
-    res.status(200).json(tag);
-  } catch (err) {
-    res.status(400).json(err);
-  }
+	try {
+		const tag = await Tag.create(req.body);
+		res.status(200).json(tag);
+	} catch (err) {
+		res.status(400).json(err);
+	}
 });
 
 // PUT: Update a tag by its `id` value
 router.put('/:id', async (req, res) => {
-  try {
-    const tag = await Tag.update(req.body, {
-      where: {
-        id: req.params.id,
-      },
-    });
-    res.status(200).json(tag);
-  } catch (err) {
-    res.status(400).json(err);
-  }
+	try {
+		const tag = await Tag.update(req.body, {
+			where: {
+				id: req.params.id,
+			},
+		});
+		res.status(200).json(tag);
+	} catch (err) {
+		res.status(400).json(err);
+	}
 });
 
 // DELETE: Delete a tag by its `id` value
 router.delete('/:id', async (req, res) => {
-  try {
-    const tag = await Tag.destroy({
-      where: {
-        id: req.params.id,
-      },
-    });
-    res.status(200).json(tag);
-  } catch (err) {
-    res.status(400).json(err);
-  }
+	try {
+		const tag = await Tag.destroy({
+			where: {
+				id: req.params.id,
+			},
+		});
+		res.status(200).json(tag);
+	} catch (err) {
+		res.status(400).json(err);
+	}
 });
 
 module.exports = router;
